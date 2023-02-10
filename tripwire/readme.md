@@ -1,0 +1,1 @@
+These eventbridge rules and a simple lambda script can be used to fire additional machines and create secondary events in a simulation i.e. eventbridge rule fires, lambda creates 10 new machines in a different subnet. 
