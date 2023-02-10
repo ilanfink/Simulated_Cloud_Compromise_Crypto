@@ -51,7 +51,7 @@ aws iam attach-group-policy --policy-arn arn:aws:iam::aws:policy/AdministratorAc
 
 
 #getting access key info
-users=("ansible-s3-integration" "AzureADRoleManager" "rc-agent" "service_axonius_s3_access")
+users=(<usernames from recon script go here>)
 echo "Getting Access Keys" 
 for user in ${users[@]}
 do
