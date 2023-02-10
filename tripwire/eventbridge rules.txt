@@ -1,0 +1,24 @@
+#These rules must be implemented in JSON format in AWS Eventbridge
+
+
+{
+"source": ["aws.ec2"],
+"detail-type": ["EC2 Instance State-change Notification"],
+"detail": {
+  "state": ["shutting-down", "stopping", "stopped", "terminated"],
+  "instance-id": ["<instance id>", "<instance id 2>"]
+}
+},
+
+
+{
+"source": ["aws.ec2"],
+"detail-type": ["EC2 AMI State Change"],
+"detail": { "ImageId": ["<ami id>", "ami id 2"], "State": ["shutting-down", "stopping", "stopped", "terminated"]}
+},
+
+{
+"source": ["aws.ec2"],
+"detail-type": ["EC2 AMI State Change"],
+"detail": {"State": ["available"]}
+}
