@@ -1,10 +1,9 @@
-#lambda to luanch EC2
+#lambda to launch EC2
 import boto3
 import os
 ec2 = boto3.resource('ec2')
 
-#These will be environment variables that we must specify in lambda
-INSTANCE_TYPE = os.environ['INSTANCE_TYPE'] 
+INSTANCE_TYPE = os.environ['INSTANCE_TYPE'] #These will be environment variables that we must specify in lambda
 KEY_NAME = os.environ['KEY_NAME']
 AMI=os.environ['AMI']
 SUBNET_ID=os.environ['SUBNET_ID']
@@ -25,8 +24,7 @@ init_script = """#!/bin/bash
                     fi
                  fi"""
 
-#Start of our function
-def lambda_handler(event, context):  
+def lambda_handler(event, context):   #Start of our function
     instance = ec2.create_instances(
         InstanceType=INSTANCE_TYPE,
         KeyName=KEY_NAME,
